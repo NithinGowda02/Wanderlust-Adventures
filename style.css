@@ -28,6 +28,7 @@ a {
 .navbar {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -38,6 +39,7 @@ a {
 .navbar-links {
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
 }
 
@@ -60,11 +62,15 @@ a {
 .hero-btn {
     background: #ffffff;
     color: #000000;
-    padding: 10px;
+    padding: 5px;
     display: inline-block;
     margin-top: 10px;
     border-radius: 10px;
     font-weight: bold;
+}
+.hero-btn:hover {
+    background: #2a74ff;
+    color: #ffffff;
 }
 .about {
     padding-top: 20px;
@@ -83,6 +89,9 @@ a {
 
 .about-text {
     line-height: 1.8;
+}
+.about img {
+    margin: auto;
 }
 
 .value {
@@ -117,6 +126,14 @@ a {
     border: 5px solid #dcffa0;
     border-radius: 15px;
 }
+.grid-item:hover{
+    transform: scale(1.1);
+    margin-bottom: 20px;
+    transition: 0.3s ease;
+}
+.grid-item{
+    transition: 0.3s ease;
+}
 
 .contact {
     background:#C0D6FF;
@@ -129,6 +146,7 @@ a {
     border-radius: 10px;
     padding:  20px;
     width: 650px;
+    max-width: 100%;
     margin: auto;
 }
 label {
@@ -141,6 +159,7 @@ input, textarea {
     font-size: 20px;
     padding: 5px;
     margin-bottom: 10px;
+    font-family: inherit;
 }
 .btn-primary {
     background-color: #2a74ff;
@@ -149,11 +168,56 @@ input, textarea {
     padding: 10px;
     font-weight: bold;
     border-radius: 10px;
+    display: inline-block;
 }
-
+.btn-primary:hover {
+    transform: scale(1.1);
+}
 footer {
     background: #000000;
     padding: 30px;
     color: #ffffff;
     text-align: center;
+}
+@media screen and (max-width:760px) {
+    .about-layout{
+        grid-template-columns: 1fr;
+    }
+    .value-flex{
+        flex-direction: column;
+    }
+    .destinations-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+}
+@media screen and (max-width : 540px) {
+
+    .navbar{
+        padding-bottom: 30px;
+    }
+    .navbar img{
+        margin: auto;
+        margin-bottom: 20px;
+
+    }
+    .navbar-links{
+        margin: auto;
+    }
+    .hero-title{
+        font-size: 55px;
+    }
+    .hero-lead{
+        font-size: 20px;
+    }
+}
+@media screen and (max-width : 409px) {
+    .hero-btn{
+        margin-bottom: 20px;
+        font-size: 20px;
+    }
+    .hero-text{
+        font-size: 40px;
+    }
+    
 }
